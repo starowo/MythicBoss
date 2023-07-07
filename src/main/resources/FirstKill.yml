@@ -1,0 +1,24 @@
+# 要全服公告首杀的怪物
+AnnounceMobs:
+  - "示例boss1"
+  - "示例boss2"
+
+# 默认公告
+Default:
+  # 公告类型
+  # TITLE: 标题
+  # CHAT: 聊天框
+  # COMMAND: 命令
+  AnnounceType: "TITLE"
+  # 公告内容
+  # 变量: %player% 为玩家名; %mob% 为怪物名
+  # 支持papi
+  # 用&:分割主标题和副标题
+  AnnounceMessage: "&c[&6首杀公告&c] &: &e%player% &6全服首次击杀了 &e%mob% &6!"
+
+# 为每个boss设置不同的公告
+示例boss2:
+  AnnounceType: "COMMAND"
+  # 你可以使用其他插件的命令来发送更高端的公告
+  # 前缀[Console]为控制台执行指令，无前缀或前缀[Player]为玩家执行指令
+  AnnounceMessage: "[Console]say &c[&6FirstKill&c] &e%player% &6全服首次击杀了 &e%mob% &6!"

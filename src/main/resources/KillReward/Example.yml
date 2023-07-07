@@ -1,0 +1,59 @@
+示例击杀奖励:
+  # 目标怪物 （mm生物内部id）
+  # 可以是一个列表
+  Target: "示例生物"
+  # Target:
+  #   - "示例生物"
+  #   - "示例生物2"
+
+  # 击杀奖励
+  Reward:
+    # 第几次击杀就写几 >=1
+    1:
+      # 不同权限组可以设置不同的击杀奖励
+      # 检测顺序为从下到上，如果玩家有多个权限组，那么只会执行最下方权限组的奖励
+      # default为默认奖励，如果不设置则没有默认奖励
+      # 权限组
+      Default:
+        # 执行指令 (支持papi) (可以不写)
+        # 前缀[Console]为控制台执行指令，无前缀或前缀[Player]为玩家执行指令
+        Commands:
+          - "eco give %player% 100"
+          - "exp %player% 100"
+          - "[Console]mm i give %player% 示例物品1 6"
+          - "mm i get 示例物品2 2"
+        # 触发消息
+        Message:
+          - "&a你首次击杀了示例生物"
+          - "&a你获得了100金币"
+          - "&a你获得了100经验"
+          - "&a你获得了示例物品1*6"
+          - "&a你获得了示例物品2*2"
+      vip1:
+        Commands:
+          - "say 你击杀了示例生物"
+          - "eco give %player% 200"
+          - "exp %player% 200"
+          - "mm i give %player% 示例物品1 12"
+          - "mm i give %player% 示例物品2 4"
+          - "give %player% diamond 2"
+        Message:
+          - "&a你首次击杀了示例生物"
+          - "&a你获得了200金币"
+          - "&a你获得了200经验"
+          - "&a你获得了示例物品1*12"
+          - "&a你获得了示例物品2*4"
+      # 第10次击杀
+    10:
+      Default:
+        Commands:
+          - "eco give %player% 500"
+          - "exp %player% 500"
+          - "mm i give %player% 示例物品1 10"
+          - "mm i give %player% 示例物品2 6"
+        Message:
+          - "&a你第10次击杀了示例生物"
+          - "&a你获得了500金币"
+          - "&a你获得了500经验"
+          - "&a你获得了示例物品1*10"
+          - "&a你获得了示例物品2*6"

@@ -1,0 +1,92 @@
+示例世界Boss:
+  # mm内部id
+  Mob: "示例世界Boss"
+  # 定时刷新 (整个都可以不写)
+  Spawn:
+    # 定时类型
+    # CD: 按死亡时间计算冷却
+    # TIME: 固定时间刷新
+    Type: "CD"
+    # type: "TIME"
+    # 冷却时间 (1d2h3m4s)
+    # m: 月 d: 日 h: 时 M: 分 s: 秒
+    Time: 12h30M
+    # 定时刷新：基准时间,刷新周期
+    # time: "2023-7-1 12:00:00, 1d"
+    # 刷新位置
+    World: "world"
+    Position: [128, 64, 99]
+    # 检测范围 (半径，如果范围内检测不到boss则判定为死亡，开始计算冷却)
+    # (如果是定时刷新，如果范围内已经有boss则不会刷新)
+    Range: 100
+  # 伤害奖励 (可以不写)
+  DamageReward:
+    # Rank和Damage可以同时使用，也可以只使用其中一个，如果只用一个删除另一个即可
+
+    # 按伤害排名奖励
+    Rank:
+      # 第1名奖励就写1
+      # 前缀[Console]为控制台执行指令，无前缀或前缀[Player]为玩家执行指令
+      1:
+        Commands:
+          - "eco give %player% 100"
+          - "exp %player% 100"
+          - "mm i give %player% 示例物品1 6"
+          - "mm i give %player% 示例物品2 2"
+        Message:
+          - "&a你获得了第1名奖励"
+          - "&a你获得了100金币"
+          - "&a你获得了100经验"
+          - "&a你获得了示例物品1*6"
+          - "&a你获得了示例物品2*2"
+      # 跳过了数字即为包括了所有跳过的数字，如这个是2-10名的奖励
+      10:
+        Commands:
+          - "eco give %player% 50"
+          - "exp %player% 50"
+          - "mm i give %player% 示例物品1 3"
+          - "mm i give %player% 示例物品2 1"
+        Message:
+          - "&a你获得了第2-10名奖励"
+          - "&a你获得了50金币"
+          - "&a你获得了50经验"
+          - "&a你获得了示例物品1*3"
+          - "&a你获得了示例物品2*1"
+      # 低保 (可以没有)
+      # 9999999:
+      #   Commands:
+      # 后略
+
+    # 按伤害奖励
+    Damage:
+      # 数字为取得此奖励需要的伤害
+      # 打出了10万+伤害的奖励
+      100000:
+        Commands:
+          - "eco give %player% 100"
+          - "exp %player% 100"
+          - "mm i give %player% 示例物品1 6"
+          - "mm i give %player% 示例物品2 2"
+        Message:
+          - "&a你获得了10万+伤害奖励"
+          - "&a你获得了100金币"
+          - "&a你获得了100经验"
+          - "&a你获得了示例物品1*6"
+          - "&a你获得了示例物品2*2"
+      # 2w到99999伤害的奖励
+      20000:
+        Commands:
+          - "eco give %player% 50"
+          - "exp %player% 50"
+          - "mm i give %player% 示例物品1 3"
+          - "mm i give %player% 示例物品2 1"
+        Message:
+          - "&a你获得了第二档伤害奖励"
+          - "&a你获得了50金币"
+          - "&a你获得了50经验"
+          - "&a你获得了示例物品1*3"
+          - "&a你获得了示例物品2*1"
+      # 低保
+      # 1:
+      #   Commands:
+      # 后略
