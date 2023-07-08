@@ -84,7 +84,7 @@ public class Boss {
 
         public void giveReward(Player player) {
             HashMap<String, String> placeholders = new HashMap<>();
-            placeholders.put("%player%", player.getName());
+            placeholders.put("player", player.getName());
             CommandsUtil.proceedCommands(commands, player, placeholders);
             for (String message : CommandsUtil.setPlaceholders(messages, player, placeholders)) {
                 player.sendMessage(message);

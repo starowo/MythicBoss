@@ -137,7 +137,7 @@ public class KillRewardManager {
                 PermissionReward reward = rewards.get(i);
                 if (player.hasPermission(reward.permission) || reward.permission.equals("Default")) {
                     HashMap<String, String> placeholders = new HashMap<>();
-                    placeholders.put("%player%", player.getName());
+                    placeholders.put("player", player.getName());
                     CommandsUtil.proceedCommands(reward.commands, player, placeholders);
                     for (String message : CommandsUtil.setPlaceholders(reward.messages, player, placeholders)) {
                         player.sendMessage(message);

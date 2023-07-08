@@ -104,8 +104,8 @@ public class BossManager {
         } else {
             message.add(defaultAnnounce.replace("%player%", player.getName()).replace("%mob%", name));
         }
-        placeholders.put("%player%", player.getName());
-        placeholders.put("%mob%", name);
+        placeholders.put("player", player.getName());
+        placeholders.put("mob", name);
         Collection<? extends Player> allPlayers = Bukkit.getOnlinePlayers();
         if (type == AnnounceType.TITLE) {
             message = CommandsUtil.setPlaceholders(message, player, placeholders);
@@ -140,8 +140,8 @@ public class BossManager {
         } else {
             message.add(defaultAnnounce.replace("%player%", player.getName()).replace("%mob%", name));
         }
-        placeholders.put("%player%", player.getName());
-        placeholders.put("%mob%", name);
+        placeholders.put("player", player.getName());
+        placeholders.put("mob", name);
         Collection<? extends Player> allPlayers = Bukkit.getOnlinePlayers();
         if (type == AnnounceType.TITLE) {
             message = CommandsUtil.setPlaceholders(message, player, placeholders);

@@ -2,7 +2,6 @@ name: MythicBoss
 main: icu.xiyoumc.mmboss.MMBoss
 author: LunarSilhouette
 version: 1.0
-api-version: 1.13
 depend:
   - MythicMobs
   - PlaceholderAPI

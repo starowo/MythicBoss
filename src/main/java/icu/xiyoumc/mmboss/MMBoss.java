@@ -4,6 +4,7 @@ import icu.xiyoumc.mmboss.boss.BossManager;
 import icu.xiyoumc.mmboss.command.MMBossCommand;
 import icu.xiyoumc.mmboss.killreward.KillRewardManager;
 import icu.xiyoumc.mmboss.listener.EntityCombatListener;
+import icu.xiyoumc.mmboss.papi.PAPIExtension;
 import icu.xiyoumc.mmboss.util.DataManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -26,6 +27,7 @@ public class MMBoss extends JavaPlugin {
         killRewardManager.loadRewardsAndDataFromFiles();
         getCommand("mmboss").setExecutor(new MMBossCommand());
         Bukkit.getPluginManager().registerEvents(new EntityCombatListener(), this);
+        new PAPIExtension().register();
         getLogger().info("MMBoss插件已加载");
     }
 
