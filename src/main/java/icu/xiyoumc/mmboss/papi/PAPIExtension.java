@@ -62,7 +62,7 @@ public class PAPIExtension extends PlaceholderExpansion {
                     return killer.getName();
                 }
             }
-            return "";
+            return "暂无";
         }
         if (args[1].equalsIgnoreCase("killreward")) {
             if (args.length != 3) {
